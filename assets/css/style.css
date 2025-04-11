@@ -1,36 +1,29 @@
 /* ================ VARIÁVEIS ================ */
 :root {
-    --purple: #6a3093;
-    --light-purple: #a044ff;
-    --dark-purple: #4a1c6b;
-    --white: #ffffff;
+    --purple: #FA439B;
+    --light-purple: #FF82C5;
+    --dark-purple: #B72D6E;
     --light-gray: #f8f9fa;
     --dark-gray: #343a40;
     --text-color: #333333;
+    --white: #ffffff;
 }
-
-
 
 /* ================ ESTILOS GERAIS ================ */
 body {
     font-family: 'Arial', sans-serif;
     color: var(--text-color);
     padding-top: 56px;
-    /* Compensar navbar fixa */
     margin: 0;
     line-height: 1.6;
+    background-color: var(--white);
 }
 
 section {
     padding: 80px 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
@@ -58,9 +51,8 @@ h6 {
     opacity: 0.8;
 }
 
- bg-purple -->.bg-purple {
-    background-color: #6f2da8 !important;
-    /* tom de roxo bonito */
+.bg-purple {
+    background-color: var(--purple) !important;
 }
 
 .navbar-brand .fas {
@@ -69,17 +61,12 @@ h6 {
 
 .custom-spacing {
     padding-left: 20px;
-    /* ou use margin-left: 20px; */
 }
 
 /* ================ HERO SECTION ================ */
-
-/* Seção Hero com imagem de fundo */
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), no-repeat center center;
     position: relative;
-    height: 100vh;
-    /* ou ajuste conforme necessário */
     overflow: hidden;
     background-size: cover;
     height: 80vh;
@@ -88,7 +75,6 @@ h6 {
     text-align: center;
     color: var(--white);
     margin-top: -56px;
-    /* Compensar navbar fixa */
 }
 
 .hero-background-img {
@@ -101,7 +87,6 @@ h6 {
     z-index: -1;
 }
 
-/* Se quiser um overlay escuro (como no linear-gradient) */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -167,6 +152,7 @@ h6 {
     padding: 30px;
     border-left: 4px solid var(--purple);
     height: 95%;
+    margin-top: 0px;
 }
 
 .contact-item {
@@ -196,7 +182,6 @@ h6 {
     color: var(--text-color);
     line-height: 1.6;
     margin-left: 34px;
-    /* Alinhar com o ícone */
 }
 
 /* MAPA */
@@ -222,12 +207,12 @@ h6 {
 /* ================ BOTÃO FLUTUANTE ================ */
 .btn-agendar-flutuante {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     z-index: 1000;
-    width: 80px;
-    height: 60px;
-    font-size: 14px;
+    width: 56px;
+    height: 56px;
+    font-size: 12px;
     font-weight: bold;
     box-shadow: 0 4px 12px rgba(106, 48, 147, 0.3);
     display: flex;
@@ -236,30 +221,30 @@ h6 {
     justify-content: center;
     text-align: center;
     transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    animation-timing-function: ease-in-out;
+    background-color: var(--purple);
+    color: var(--white) !important;
 }
 
 .btn-agendar-flutuante:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 16px rgba(106, 48, 147, 0.4);
+    color: var(--white) !important;
 }
 
 .btn-agendar-flutuante i {
     margin-bottom: 2px;
-}
-
-.pulse {
-    animation: pulse 2s infinite;
+    color: var(--white) !important;
 }
 
 @keyframes pulse {
     0% {
         transform: scale(1);
     }
-
     50% {
         transform: scale(1.1);
     }
-
     100% {
         transform: scale(1);
     }
@@ -275,6 +260,7 @@ footer {
 footer p {
     margin-bottom: 0.5rem;
     line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 footer hr {
@@ -286,16 +272,17 @@ footer hr {
 /* ================ BOTÕES ================ */
 .btn-purple {
     background-color: var(--purple);
-    color: var(--white);
+    color: var(--white) !important;
     border: none;
     padding: 10px 25px;
     transition: all 0.3s ease;
     font-weight: 500;
+    border-radius: 6px;
 }
 
 .btn-purple:hover {
-    background-color: var(--light-purple);
-    color: var(--white);
+    background-color: var(--dark-purple);
+    color: var(--white) !important;
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(106, 48, 147, 0.3);
 }
@@ -315,37 +302,19 @@ footer hr {
     }
 }
 
-/* Ajustes específicos para mobile */
 @media (max-width: 768px) {
     .hero-section {
-
-
         min-height: calc(100vh - 56px);
-        /* Ajusta a altura */
     }
 
     .hero-section h1 {
         font-size: 2rem;
-        /* Reduz o tamanho do título */
         margin-top: 0;
     }
 
     .hero-section p.lead {
         font-size: 1.2rem;
-        /* Reduz o tamanho do subtítulo */
     }
-}
-
-.contact-box {
-    margin-top: 0px;
-}
-
-.btn-agendar-flutuante {
-    bottom: 20px;
-    right: 20px;
-    width: 56px;
-    height: 56px;
-    font-size: 12px;
 }
 
 @media (max-width: 576px) {
